@@ -41,6 +41,9 @@ public class Utente {
 		this.email = email;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Utente [username=" + username + ", nomeCompleto=" + nomeCompleto + ", email=" + email + "]";
+	}
 
 }

@@ -54,4 +54,10 @@ public class Postazione {
 		this.edificio = edificio;
 	}
 
+	@Override
+	public String toString() {
+		return "Postazione [codice=" + codice + ", descrizione=" + descrizione + ", tipo=" + tipo + ", maxOccupanti="
+				+ maxOccupanti + ", edificio=" + edificio + "]";
+	}
+
 }

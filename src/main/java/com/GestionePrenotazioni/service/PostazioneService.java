@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.GestionePrenotazioni.model.Postazione;
+import com.GestionePrenotazioni.model.Tipo;
 import com.GestionePrenotazioni.repository.PostazioneDaoRepository;
 
 @Service
@@ -36,5 +37,18 @@ public class PostazioneService {
 	public List<Postazione> getAllPostazioni() {
 		return (List<Postazione>) repo.findAll();
 	}
+	
+	public List<Postazione> getPostazioniByTipo(Tipo t) {
+		return repo.findByTipo(t);
+	}
+	
+	public List<Postazione> getPostazioniByCitta(String s) {
+		return repo.findByEdificioCitta(s);
+	}
+	
+	public List<Postazione> getPostazioniByTipoAndCitta(Tipo t, String s) {
+		return repo.findByTipoAndEdificioCitta(t, s);
+	}
+
 
 }

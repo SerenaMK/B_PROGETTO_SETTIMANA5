@@ -1,6 +1,7 @@
 package com.GestionePrenotazioni.runner;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -40,16 +41,39 @@ public class GestionePrenotazioniRunner implements ApplicationRunner {
 		Prenotazione pr1 = new Prenotazione(LocalDate.of(2023, 3, 5), u1, p1);
 		Prenotazione pr2 = new Prenotazione(LocalDate.of(2023, 3, 5), u2, p2);
 		
+		Prenotazione prNotValid = new Prenotazione(LocalDate.of(2023, 3, 6), u1, p2);
+		
 		// Inserisco le istanze nel DB
-		edificioService.insertEdificio(e1);
-		edificioService.insertEdificio(e2);
-		postazioneService.insertPostazione(p1);
-		postazioneService.insertPostazione(p2);
-		postazioneService.insertPostazione(p3);
-		utenteService.insertUtente(u1);
-		utenteService.insertUtente(u2);
-		prenotazioneService.insertPrenotazione(pr1);
-		prenotazioneService.insertPrenotazione(pr2);
+//		edificioService.insertEdificio(e1);
+//		edificioService.insertEdificio(e2);
+//		postazioneService.insertPostazione(p1);
+//		postazioneService.insertPostazione(p2);
+//		postazioneService.insertPostazione(p3);
+//		utenteService.insertUtente(u1);
+//		utenteService.insertUtente(u2);
+//		prenotazioneService.insertPrenotazione(pr1);
+//		prenotazioneService.insertPrenotazione(pr2);
+		
+		// Prova di prenotazione non valida
+//		prenotazioneService.insertPrenotazione(prNotValid);
+		
+		// Get by ID
+//		Utente u = utenteService.getUtenteById("mario1");
+//		System.out.println(u);
+		
+		// Get All
+//		List<Postazione> lista = postazioneService.getAllPostazioni();
+		
+		// Get postazione by tipo
+//		List<Postazione> lista = postazioneService.getPostazioniByTipo(Tipo.PRIVATO);
+		
+		// Get postazione by città
+//		List<Postazione> lista = postazioneService.getPostazioniByCitta("Roma");
+		
+		// Get postazione by tipo e città
+		List<Postazione> lista = postazioneService.getPostazioniByTipoAndCitta(Tipo.SALARIUNIONI, "Roma");
+		
+		lista.forEach(p -> System.out.println(p));
 		
 		
 
