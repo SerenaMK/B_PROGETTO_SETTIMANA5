@@ -36,5 +36,17 @@ public class UtenteService {
 	public List<Utente> getAllUtenti() {
 		return (List<Utente>) repo.findAll();
 	}
+	
+	public List<Utente> getUtentiByNome(String s) {
+		return repo.findByNomeCompletoIgnoreCase(s);
+	}
+	
+	public List<Utente> getUtentiByEmail(String s) {
+		return repo.findByEmail(s);
+	}
+	
+	public List<Utente> getUtentiByNomeContaining(String s) {
+		return repo.findByNomeCompletoContainingIgnoreCase(s);
+	}
 
 }

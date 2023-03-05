@@ -43,11 +43,23 @@ public class PostazioneService {
 	}
 	
 	public List<Postazione> getPostazioniByCitta(String s) {
-		return repo.findByEdificioCitta(s);
+		return repo.findByEdificioCittaIgnoreCase(s);
 	}
 	
 	public List<Postazione> getPostazioniByTipoAndCitta(Tipo t, String s) {
-		return repo.findByTipoAndEdificioCitta(t, s);
+		return repo.findByTipoAndEdificioCittaIgnoreCase(t, s);
+	}
+	
+	public List<Postazione> getPostazioniByMaxOccupantiBetween(int min, int max) {
+		return repo.findByMaxOccupantiBetween(min, max);
+	}
+	
+	public List<Postazione> getPostazioniByEdificio(String s) {
+		return repo.findByEdificioNomeEdificioIgnoreCase(s);
+	}
+	
+	public List<Postazione> getPostazioniByTipoAndMaxOccupantiBetween(Tipo t, int min, int max) {
+		return repo.findByTipoAndMaxOccupantiBetween(t, min, max);
 	}
 
 

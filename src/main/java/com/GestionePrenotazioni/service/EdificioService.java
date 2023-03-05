@@ -36,5 +36,17 @@ public class EdificioService {
 	public List<Edificio> getAllEdifici() {
 		return (List<Edificio>) repo.findAll();
 	}
+	
+	public List<Edificio> getEdificiByNome(String s) {
+		return repo.findByNomeEdificioIgnoreCase(s);
+	}
+	
+	public List<Edificio> getEdificiByCitta(String s) {
+		return repo.findByCittaIgnoreCase(s);
+	}
+	
+	public List<Edificio> getEdificiByIndirizzoContains(String s) {
+		return repo.findByIndirizzoContainsIgnoreCase(s);
+	}
 
 }

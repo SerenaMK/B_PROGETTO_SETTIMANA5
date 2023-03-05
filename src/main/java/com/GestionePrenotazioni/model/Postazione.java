@@ -36,7 +36,7 @@ public class Postazione {
 	private int maxOccupanti;
 	
 	@ManyToOne
-	@JoinColumn(name="nome_edificio")
+	@JoinColumn(name="nomeEdificio")
 	private Edificio edificio;
 	
 	@OneToMany(mappedBy = "postazione")

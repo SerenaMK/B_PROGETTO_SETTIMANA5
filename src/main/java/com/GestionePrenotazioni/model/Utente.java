@@ -34,6 +34,7 @@ public class Utente {
 		if(prenotazioni==null) prenotazioni=new ArrayList<Prenotazione>();
 		prenotazioni.add(p);
 	}
+	
 	public Utente(String username, String nomeCompleto, String email) {
 		super();
 		this.username = username;

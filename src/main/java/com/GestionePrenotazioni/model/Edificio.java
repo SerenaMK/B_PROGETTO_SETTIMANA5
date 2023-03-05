@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 public class Edificio {
 	
 	@Id
-	private String nome_edificio;
+	private String nomeEdificio;
 	@Column(nullable=false)
 	private String indirizzo;
 	@Column(nullable=false)
@@ -37,14 +37,14 @@ public class Edificio {
 	
 	public Edificio(String nome_edificio, String indirizzo, String citta) {
 		super();
-		this.nome_edificio = nome_edificio;
+		this.nomeEdificio = nome_edificio;
 		this.indirizzo = indirizzo;
 		this.citta = citta;
 	}
 
 	@Override
 	public String toString() {
-		return "Edificio [nome_edificio=" + nome_edificio + ", indirizzo=" + indirizzo + ", citta=" + citta + "]";
+		return "Edificio [nome_edificio=" + nomeEdificio + ", indirizzo=" + indirizzo + ", citta=" + citta + "]";
 	}
 	
 	
